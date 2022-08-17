@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Form, Button, Card, CardGroup, Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -15,25 +16,69 @@ export function RegistrationView(props) {
   };
 
   return (
-    <form>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </label>
-      <label>
-        Birthday:
-        <input type="date" value={birthday} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
+    <Container style={{ paddingTop: '4rem' }}>
+      <Navbar bg="dark" variant="dark" expand="md" fixed="top">
+        <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card body>
+              <Card.Title className="text-center">Register for MyFlix!</Card.Title>
+              <Form>
+                <Form.Group>
+                  <Form.Label>Username:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                    required
+                    placeholder="Enter your username." />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Password:</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    required
+                    minlength="8"
+                    placeholder="Password must be at least 8 characters." />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Email:</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    placeholder="Please enter a valid email." />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Birthday:</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={birthday}
+                    onChange={e => setPassword(e.target.value)} />
+                </Form.Group>
+
+                <Button variant="dark" type="submit" onClick={handleSubmit}>Submit</Button>
+              </Form>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
