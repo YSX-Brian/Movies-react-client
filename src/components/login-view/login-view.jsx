@@ -1,33 +1,56 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Card, CardGroup, Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
+import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username Required.');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be at least 5 characters long.');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password Required.');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be at least 6 characters long.');
+      isReq = false;
+    }
+
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+    const isReq = validate();
+    if (isReq) {
+      /* Send request to the server for authentication */
+      axios.post('https://myflix17507.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      })
+        .then(response => {
+          const data = response.data;
+          props.onLoggedIn(data);
+        })
+        .catch(e => {
+          console.log('User not found.')
+        });
+    }
   };
 
   return (
     <Container style={{ paddingTop: '4rem' }}>
-      <Navbar bg="dark" variant="dark" expand="md" fixed="top">
-
-        <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
       <Row>
         <Col>
           <CardGroup>
@@ -40,6 +63,7 @@ export function LoginView(props) {
                     type="text"
                     onChange={e => setUsername(e.target.value)}
                     placeholder="Enter your username." />
+                  {usernameErr && <p>{usernameErr}</p>}
                 </Form.Group>
 
                 <Form.Group controlId="formPassword">
@@ -48,6 +72,7 @@ export function LoginView(props) {
                     type="password"
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Enter your password." />
+                  {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
                 <Button variant="dark" type="submit" onClick={handleSubmit}>
                   Submit
