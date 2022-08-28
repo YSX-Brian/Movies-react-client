@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Card, CardGroup, Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
+import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -8,25 +9,62 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username Required.');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be at least 5 characters long.');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password Required.');
+      isReq = false;
+    } else if (password.length < 8) {
+      setPasswordErr('Password must be at least 8 characters long.');
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr('Email Required.');
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setEmailErr('Please use a valid email address.');
+      isReq = false;
+    }
+
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
+    const isReq = validate();
+    if (isReq) {
+      axios.post('https://myflix17507.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          alert('Registration successful, please log in!');
+          window.open('/', '_self');
+        })
+        .catch(response => {
+          console.error(response);
+          alert('Registration error, please try again.')
+        });
+    }
   };
 
   return (
     <Container style={{ paddingTop: '4rem' }}>
-      <Navbar bg="dark" variant="dark" expand="md" fixed="top">
-        <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
       <Row>
         <Col>
           <CardGroup>
@@ -40,7 +78,9 @@ export function RegistrationView(props) {
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                     required
+                    minlength="5"
                     placeholder="Enter your username." />
+                  {usernameErr && <p>{usernameErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -52,6 +92,7 @@ export function RegistrationView(props) {
                     required
                     minlength="8"
                     placeholder="Password must be at least 8 characters." />
+                  {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -62,6 +103,7 @@ export function RegistrationView(props) {
                     onChange={e => setEmail(e.target.value)}
                     required
                     placeholder="Please enter a valid email." />
+                  {emailErr && <p>{emailErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -69,7 +111,7 @@ export function RegistrationView(props) {
                   <Form.Control
                     type="date"
                     value={birthday}
-                    onChange={e => setPassword(e.target.value)} />
+                    onChange={e => setBirthday(e.target.value)} />
                 </Form.Group>
 
                 <Button variant="dark" type="submit" onClick={handleSubmit}>Submit</Button>
