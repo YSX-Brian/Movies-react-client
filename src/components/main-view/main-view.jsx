@@ -10,8 +10,9 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { Menubar } from '../navbar/navbar';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileViewtest } from '../profile-view/profile-viewtest';
 
-import { Row, Col, Card, Button, Form, Nav, Navbar, Container } from 'react-bootstrap';
+import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap';
 
 
 class MainView extends React.Component {
@@ -52,7 +53,7 @@ class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
     });
 
     localStorage.setItem('token', authData.token);
@@ -127,7 +128,7 @@ class MainView extends React.Component {
             <Route path={`/users/${user}`} render={({ history }) => {
               if (!user) return <Redirect to='/' />
               return <Col>
-                <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()} />
+                <ProfileViewtest movie={movies} user={user} onBackClick={() => history.goBack()} />
               </Col>
             }} />
 
