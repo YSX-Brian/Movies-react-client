@@ -10,7 +10,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { Menubar } from '../navbar/navbar';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
-import { ProfileViewtest } from '../profile-view/profile-viewtest';
+import { ProfileView } from '../profile-view/profile-view';
 
 import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap';
 
@@ -128,7 +128,7 @@ class MainView extends React.Component {
             <Route path={`/users/${user}`} render={({ history }) => {
               if (!user) return <Redirect to='/' />
               return <Col>
-                <ProfileViewtest movie={movies} user={user} onBackClick={() => history.goBack()} />
+                <ProfileView movie={movies} user={user} onBackClick={() => history.goBack()} />
               </Col>
             }} />
 
