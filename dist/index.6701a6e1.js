@@ -25272,7 +25272,7 @@ var _registrationView = require("../registration-view/registration-view");
 var _navbar = require("../navbar/navbar");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
-var _profileViewtest = require("../profile-view/profile-viewtest");
+var _profileView = require("../profile-view/profile-view");
 var _reactBootstrap = require("react-bootstrap");
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -25488,7 +25488,7 @@ class MainView extends _reactDefault.default.Component {
                                         to: "/"
                                     }));
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_profileViewtest.ProfileViewtest, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
                                             movie: movies,
                                             user: user,
                                             onBackClick: ()=>history.goBack()
@@ -25515,7 +25515,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps","../registration-view/registration-view":"aP2YV","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","../navbar/navbar":"63yS7","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../login-view/login-view":"054li","../profile-view/profile-viewtest":"2JRVe"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps","../registration-view/registration-view":"aP2YV","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","../navbar/navbar":"63yS7","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../login-view/login-view":"054li","../profile-view/profile-view":"2E7Aw"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -28796,6 +28796,7 @@ class MovieCard extends _reactDefault.default.Component {
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                            variant: "dark",
                             onClick: ()=>this.addFavorite(movie)
                             ,
                             __source: {
@@ -45151,11 +45152,11 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","axios":"iYoWk","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps"}],"2JRVe":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8817 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-runtime":"8xIwr","axios":"iYoWk","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps"}],"2E7Aw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8817.prelude(module);
+$parcel$ReactRefreshHelpers$58c6.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -45165,7 +45166,7 @@ parcelHelpers.defineInteropFlag(exports);
 //allow a user to deregister
 //display a list of the user's favorite movies
 //allow a user to remove a favorite movie
-parcelHelpers.export(exports, "ProfileViewtest", ()=>ProfileViewtest
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
@@ -45175,7 +45176,7 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 var _profileViewScss = require("./profile-view.scss");
-class ProfileViewtest extends _reactDefault.default.Component {
+class ProfileView extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
@@ -45305,39 +45306,39 @@ class ProfileViewtest extends _reactDefault.default.Component {
         const { FavoriteMovies , Username , Email , Birthday , Password  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             __source: {
-                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 159
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
-                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                        fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 160
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
-                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                            fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 161
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             __source: {
-                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 162
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Header, {
                                     __source: {
-                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                        fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 163
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                                         __source: {
-                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                            fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 164
                                         },
                                         __self: this,
@@ -45346,14 +45347,14 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                     __source: {
-                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                        fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 166
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                             __source: {
-                                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 167
                                             },
                                             __self: this,
@@ -45364,7 +45365,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                             __source: {
-                                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 168
                                             },
                                             __self: this,
@@ -45375,7 +45376,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                             __source: {
-                                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 169
                                             },
                                             __self: this,
@@ -45392,20 +45393,20 @@ class ProfileViewtest extends _reactDefault.default.Component {
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                     __source: {
-                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                        fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 175
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Header, {
                             __source: {
-                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 176
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                                 __source: {
-                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                    fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 177
                                 },
                                 __self: this,
@@ -45414,20 +45415,20 @@ class ProfileViewtest extends _reactDefault.default.Component {
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Body, {
                             __source: {
-                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 179
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 className: "justify-content-md-center",
                                 __source: {
-                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                    fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 180
                                 },
                                 __self: this,
                                 children: FavoriteMovies.length == 0 ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
-                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                        fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 182
                                     },
                                     __self: this,
@@ -45438,21 +45439,21 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                                         className: "fav-movie",
                                         __source: {
-                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                            fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 188
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Figure, {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 189
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                                     to: `/movies/${movies._id}`,
                                                     __source: {
-                                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                        fileName: "src/components/profile-view/profile-view.jsx",
                                                         lineNumber: 190
                                                     },
                                                     __self: this,
@@ -45461,14 +45462,14 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                             src: movies.ImagePath,
                                                             alt: movies.Title,
                                                             __source: {
-                                                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                                fileName: "src/components/profile-view/profile-view.jsx",
                                                                 lineNumber: 191
                                                             },
                                                             __self: this
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Figure.Caption, {
                                                             __source: {
-                                                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                                fileName: "src/components/profile-view/profile-view.jsx",
                                                                 lineNumber: 192
                                                             },
                                                             __self: this,
@@ -45483,7 +45484,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                 onClick: ()=>this.removeFavorite(movies._id)
                                                 ,
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 195
                                                 },
                                                 __self: this,
@@ -45498,32 +45499,32 @@ class ProfileViewtest extends _reactDefault.default.Component {
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
-                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                        fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 206
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
-                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                            fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 207
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             __source: {
-                                fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 208
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Header, {
                                     __source: {
-                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                        fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 209
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                                         __source: {
-                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                            fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 210
                                         },
                                         __self: this,
@@ -45532,7 +45533,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Body, {
                                     __source: {
-                                        fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                        fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 212
                                     },
                                     __self: this,
@@ -45540,21 +45541,21 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                         onSubmit: (e)=>this.editUser(e, this.Username, this.Password, this.Email, this.Birthday)
                                         ,
                                         __source: {
-                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                            fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 213
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 222
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 223
                                                         },
                                                         __self: this,
@@ -45569,7 +45570,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                         minLength: "5",
                                                         placeholder: "Minimum of 5 characters.",
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 224
                                                         },
                                                         __self: this
@@ -45578,14 +45579,14 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 233
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 234
                                                         },
                                                         __self: this,
@@ -45600,7 +45601,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                         minLength: "8",
                                                         placeholder: "Minimum of 8 characters.",
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 235
                                                         },
                                                         __self: this
@@ -45609,14 +45610,14 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 244
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 245
                                                         },
                                                         __self: this,
@@ -45629,7 +45630,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                         ,
                                                         required: true,
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 246
                                                         },
                                                         __self: this
@@ -45638,14 +45639,14 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 253
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 254
                                                         },
                                                         __self: this,
@@ -45657,7 +45658,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                         onChange: (e)=>this.setBirthday(e.target.value)
                                                         ,
                                                         __source: {
-                                                            fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                            fileName: "src/components/profile-view/profile-view.jsx",
                                                             lineNumber: 255
                                                         },
                                                         __self: this
@@ -45670,7 +45671,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                 onClick: ()=>this.editUser()
                                                 ,
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 261
                                                 },
                                                 __self: this,
@@ -45678,28 +45679,28 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 262
                                                 },
                                                 __self: this
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 263
                                                 },
                                                 __self: this
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 264
                                                 },
                                                 __self: this
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx("h4", {
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 265
                                                 },
                                                 __self: this,
@@ -45711,7 +45712,7 @@ class ProfileViewtest extends _reactDefault.default.Component {
                                                 onClick: ()=>this.deleteUser()
                                                 ,
                                                 __source: {
-                                                    fileName: "src/components/profile-view/profile-viewtest.jsx",
+                                                    fileName: "src/components/profile-view/profile-view.jsx",
                                                     lineNumber: 266
                                                 },
                                                 __self: this,
@@ -45729,11 +45730,11 @@ class ProfileViewtest extends _reactDefault.default.Component {
     }
 }
 
-  $parcel$ReactRefreshHelpers$8817.postlude(module);
+  $parcel$ReactRefreshHelpers$58c6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps","./profile-view.scss":"gb0ga","react-bootstrap":"h2YVd"}],"gb0ga":[function() {},{}],"jUTZ8":[function() {},{}]},["4BRvO","dQqpx","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"JeBhL","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"04rps"}],"gb0ga":[function() {},{}],"jUTZ8":[function() {},{}]},["4BRvO","dQqpx","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
