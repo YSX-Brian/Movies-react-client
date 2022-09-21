@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 export class DirectorView extends React.Component {
 
@@ -14,8 +14,8 @@ export class DirectorView extends React.Component {
               <Card>
                 <Card.Body className="text-center">
                   <Card.Title>{director.Name}</Card.Title>
+                  <Card.Text>Born: {director.Birth}</Card.Text>
                   <Card.Text>{director.Bio}</Card.Text>
-                  <Card.Text>{director.Birth}</Card.Text>
                   <Button onClick={() => { onBackClick(); }} variant="dark">Back</Button>
                 </Card.Body>
               </Card>
