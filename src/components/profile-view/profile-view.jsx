@@ -176,7 +176,7 @@ export class ProfileView extends React.Component {
 
                   return (
                     <Col xs={6} sm={6} md={4} lg={3} key={movies._id}>
-                      <Card className='text-center'>
+                      <Card className='text-center fav-card'>
                         <Card.Img variant="top" crossOrigin="anonymous" src={movies.ImagePath} />
                         <Card.Body>
                           <Card.Title>{movies.Title}</Card.Title>
