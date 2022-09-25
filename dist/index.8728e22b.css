@@ -1,14 +1,5 @@
-.fav-movie {
-  margin-bottom: 15px;
-}
-.fav-movie figure {
-  position: relative;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.card {
+.fav-card {
+  min-height: 550px;
   margin-bottom: 15px;
 }
 .mov-card {
