@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -52,9 +53,10 @@ export function LoginView(props) {
   return (
     <Container style={{ paddingTop: '4rem' }}>
       <Row>
-        <Col>
+        <Col md={3}></Col>
+        <Col md={6}>
           <CardGroup>
-            <Card body>
+            <Card body >
               <Card.Title className="text-center">Login to MyFlix to access your movies.</Card.Title>
               <Form>
                 <Form.Group controlId="formUsername">
@@ -67,20 +69,22 @@ export function LoginView(props) {
                 </Form.Group>
 
                 <Form.Group controlId="formPassword">
-                  <Form.Label>Password:</Form.Label>
+                  <Form.Label className="mt-2">Password:</Form.Label>
                   <Form.Control
                     type="password"
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Enter your password." />
                   {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
-                <Button variant="dark" type="submit" onClick={handleSubmit}>
+                <Button className="mt-3 mb-3" variant="dark" type="submit" onClick={handleSubmit}>
                   Submit
                 </Button>
               </Form>
+              <Link to={'/register'}>No account? Create one here.</Link>
             </Card>
           </CardGroup>
         </Col>
+        <Col md={3}></Col>
       </Row>
     </Container>
   );
