@@ -1,17 +1,13 @@
-import React from 'react';
-import Col from 'react-bootstrap/Col';
-import { connect } from 'react-redux';
-
-import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+import React, { useState } from 'react';
+import { Row, Col, Form, Card } from 'react-bootstrap';
 import { MovieCard } from '../movie-card/movie-card';
+import './movies-list.scss'
 
-const mapStateToProps = state => {
-  const { visibilityFilter } = state;
-  return { visibilityFilter };
-};
+export function MoviesList(props) {
 
-function MoviesList(props) {
-  const { movies, visibilityFilter } = props;
+  const [visibilityFilter, setVisibilityFilter] = useState('');
+  const { movies } = props;
+
   let filteredMovies = movies;
 
   if (visibilityFilter !== '') {
@@ -21,15 +17,27 @@ function MoviesList(props) {
   if (!movies) return <div className="main-view" />;
 
   return <>
-    <Col md={12} style={{ margin: '1em' }}>
-      <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-    </Col>
-    {filteredMovies.map(m => (
-      <Col md={3} key={m._id}>
-        <MovieCard movie={m} />
+    <Row>
+      <Col className="text-center">
+        <h3 className="mt-4">Welcome to MyFlix!</h3>
+        <p>Find and save your favorite movies on MyFlix. Scroll or use the search bar below to discover more.</p>
       </Col>
-    ))}
-  </>;
+    </Row>
+    <Row>
+      <Col className='mb-4'>
+        <Form.Control
+          onChange={e => setVisibilityFilter(e.target.value)}
+          value={visibilityFilter}
+          placeholder="Search all MyFlix Movies"
+        />
+      </Col>
+    </Row>
+    <Row>
+      {filteredMovies.map(m => (
+        <Col xs={12} sm={12} md={6} lg={4} key={m._id}>
+          <MovieCard movie={m} />
+        </Col>
+      ))}
+    </Row>
+  </>
 }
-
-export default connect(mapStateToProps)(MoviesList);
