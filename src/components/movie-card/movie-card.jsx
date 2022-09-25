@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './movie-card.scss'
 
 export class MovieCard extends React.Component {
 
@@ -14,7 +15,8 @@ export class MovieCard extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {
-        console.log(response);
+        const data = response.data;
+        console.log(data);
         alert("Movie added to favorites.");
       })
       .catch(function (error) {
@@ -26,15 +28,14 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card>
-        <Card.Img variant="top" src={movie.ImagePath} />
+      <Card className='text-center mov-card'>
+        <Card.Img variant="top" crossOrigin="anonymous" className="test" src={movie.ImagePath} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link">Open</Button>
-          </Link>
-          <Button variant="dark" onClick={() => this.addFavorite(movie)}>Add to Favorites</Button>
+          <Link to={`/movies/${movie._id}`}>More Details</Link>
+          <br></br>
+          <Button className='mt-3' variant="outline-success" onClick={() => this.addFavorite(movie)}>Add to Favorites</Button>
         </Card.Body>
       </Card>
     );
