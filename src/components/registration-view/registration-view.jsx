@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -66,7 +67,8 @@ export function RegistrationView(props) {
   return (
     <Container style={{ paddingTop: '4rem' }}>
       <Row>
-        <Col>
+        <Col md={2}></Col>
+        <Col md={8}>
           <CardGroup>
             <Card body>
               <Card.Title className="text-center">Register for MyFlix!</Card.Title>
@@ -114,11 +116,13 @@ export function RegistrationView(props) {
                     onChange={e => setBirthday(e.target.value)} />
                 </Form.Group>
 
-                <Button variant="dark" type="submit" onClick={handleSubmit}>Submit</Button>
+                <Button className="mt-3 mb-3" variant="dark" type="submit" onClick={handleSubmit}>Submit</Button>
               </Form>
+              <Link to={'/'}>Already signed up? Log in here.</Link>
             </Card>
           </CardGroup>
         </Col>
+        <Col md={2}></Col>
       </Row>
     </Container>
   );
