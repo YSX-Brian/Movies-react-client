@@ -11,6 +11,11 @@
 .card {
   margin-bottom: 15px;
 }
+.mov-card {
+  min-height: 950px;
+}
+
+
 .my-flix {
   color: steelblue;
 }
