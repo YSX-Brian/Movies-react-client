@@ -153,10 +153,19 @@ export class ProfileView extends React.Component {
               <Card.Header>
                 <h3>My Profile</h3>
               </Card.Header>
-              <Card.Body>
-                <p>Name: {Username}</p>
-                <p>Email: {Email}</p>
-                <p>Birthday: {moment(Birthday).utc().format('MM-DD-YYYY')}</p>
+              <Card.Body className="profile-info">
+                <div>
+                  <h5 className="d-inline">Name:   </h5>
+                  <p className="d-inline">{Username}</p>
+                </div>
+                <div>
+                  <h5 className="d-inline">Email:   </h5>
+                  <p className="d-inline">{Email}</p>
+                </div>
+                <div>
+                  <h5 className="d-inline">Birthday:   </h5>
+                  <p className="d-inline">{moment(Birthday).utc().format('MM-DD-YYYY')}</p>
+                </div>
               </Card.Body>
             </Card>
           </Col>
