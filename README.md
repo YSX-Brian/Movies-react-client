@@ -8,9 +8,9 @@ Users can sign up, update/change their account information, and manage a list of
 Visit the website here:  
 https://myflix17507.netlify.app/
 
-### Languages/Libraries/Frameworks used: 
-JavaScript
-SCSS  
-React  
-Bootstrap 
-Parcel
+### Languages/Libraries/Frameworks used:   
+JavaScript  
+SCSS    
+React    
+Bootstrap   
+Parcel  
