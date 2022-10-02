@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Button, Form, Container, Modal, Figure } from 'react-bootstrap';
 import moment from "moment";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./profile-view.scss";
 
 export class ProfileView extends React.Component {
@@ -183,21 +182,24 @@ export class ProfileView extends React.Component {
                 FavoriteMovies.map((movieId) => {
                   let movies = movie.find((movie) => movie._id === movieId);
 
-                  return (
-                    <Col xs={6} sm={6} md={4} lg={3} key={movies._id}>
-                      <Card className='text-center fav-card'>
-                        <Card.Img variant="top" crossOrigin="anonymous" src={movies.ImagePath} />
-                        <Card.Body>
-                          <Card.Title>{movies.Title}</Card.Title>
-                          <Link to={`/movies/${movies._id}`}>More Details</Link>
-                          <br></br>
-                          <Button className="mt-2" variant="outline-danger" onClick={() => this.removeFavorite(movies._id)}>
-                            Remove
-                          </Button>
-                        </Card.Body>
-                      </Card>
-                    </Col>
-                  );
+                  if (movies) {
+                    return (
+                      <Col xs={6} sm={6} md={4} lg={3} key={movies._id}>
+                        <Card className='text-center fav-card'>
+                          <Card.Img variant="top" crossOrigin="anonymous" src={movies.ImagePath} />
+                          <Card.Body>
+                            <Card.Title>{movies.Title}</Card.Title>
+                            <Link to={`/movies/${movies._id}`}>More Details</Link>
+                            <br></br>
+                            <Button className="mt-2" variant="outline-danger" onClick={() => { if (window.confirm('Delete from favorites?')) this.removeFavorite(movies._id) }}>
+                              Remove
+                            </Button>
+
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    );
+                  }
                 })
               }
             </Row>
