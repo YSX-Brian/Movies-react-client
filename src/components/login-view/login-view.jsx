@@ -45,7 +45,7 @@ export function LoginView(props) {
           props.onLoggedIn(data);
         })
         .catch(e => {
-          console.log('User not found.')
+          alert('Unable to log in. Check username and password.');
         });
     }
   };
