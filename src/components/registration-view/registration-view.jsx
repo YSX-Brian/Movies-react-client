@@ -59,7 +59,7 @@ export function RegistrationView(props) {
         })
         .catch(response => {
           console.error(response);
-          alert('Registration error, please try again.')
+          alert(response.response.data)
         });
     }
   };
