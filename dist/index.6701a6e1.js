@@ -45320,6 +45320,7 @@ class ProfileView extends _reactDefault.default.Component {
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                            className: "mb-3",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 151
@@ -45437,6 +45438,7 @@ class ProfileView extends _reactDefault.default.Component {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                    className: "mb-3",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
                         lineNumber: 173
