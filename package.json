@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/megidolaonn/myFlix-client#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-rc.0"
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "gh-pages": "^4.0.0"
   }
 }
