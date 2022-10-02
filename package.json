@@ -2,15 +2,22 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "default": "src/index.html",
   "dependencies": {
     "@parcel/transformer-react-refresh-wrap": "^2.7.0",
     "axios": "^0.27.2",
     "js-tokens": "^4.0.0",
     "loose-envify": "^1.4.0",
+    "moment": "^2.29.4",
+    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^5.3.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "scheduler": "^0.23.0"
   },
   "scripts": {
@@ -27,6 +34,7 @@
   },
   "homepage": "https://github.com/megidolaonn/myFlix-client#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-rc.0"
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "gh-pages": "^4.0.0"
   }
 }
