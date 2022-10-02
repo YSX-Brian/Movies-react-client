@@ -148,7 +148,7 @@ export class ProfileView extends React.Component {
       <Container>
         <Row>
           <Col>
-            <Card>
+            <Card className='mb-3'>
               <Card.Header>
                 <h3>My Profile</h3>
               </Card.Header>
@@ -170,7 +170,7 @@ export class ProfileView extends React.Component {
           </Col>
         </Row>
 
-        <Card>
+        <Card className='mb-3'>
           <Card.Header>
             <h3>My Favorite Movies</h3>
           </Card.Header>
