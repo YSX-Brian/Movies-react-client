@@ -14,3 +14,9 @@ SCSS
 React    
 Bootstrap   
 Parcel  
+
+Main View:  
+![myflixmain](img/myflixmain.png)
+
+Login View/Welcome Screen:  
+![myflixlogin](img/myflixlogin.png)
