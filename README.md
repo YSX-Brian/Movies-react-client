@@ -12,7 +12,7 @@ Main Page:
 
 ![main-img](img/movies-main.png)
 
-Login Screen:  
+Registration Screen:  
 
 ![registration-img](img/movies-registration.png)
 
